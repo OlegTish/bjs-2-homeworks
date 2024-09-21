@@ -87,7 +87,7 @@ class PrintEditionItem {
       const bookIndex = this.books.findIndex((book) => book.name === bookName);
       if (bookIndex !== -1) {
         const book = this.books[bookIndex];
-        this.books.splice(bookIndex, 1); // Удаляем книгу из библиотеки
+        this.books.splice(bookIndex, 1);
         return book;
       }
       return null;
@@ -116,19 +116,19 @@ class PrintEditionItem {
   library.addBook(new NovelBook("Герберт Уэллс", "Машина времени", 1895, 138));
   library.addBook(new Magazine("Мурзилка", 1924, 60));
   
-  console.log(library.findBookBy("name", "Властелин колец")); // null
-  console.log(library.findBookBy("releaseDate", 1924).name); // "Мурзилка"
+  console.log(library.findBookBy("name", "Властелин колец"));
+  console.log(library.findBookBy("releaseDate", 1924).name);
   
-  console.log("Количество книг до выдачи: " + library.books.length); // 4
+  console.log("Количество книг до выдачи: " + library.books.length);
   
   const issuedBook = library.giveBookByName("Машина времени");
-  console.log("Количество книг после выдачи: " + library.books.length); // 3
+  console.log("Количество книг после выдачи: " + library.books.length);
   
   issuedBook.state = 20;
-  console.log(issuedBook.state); // 20
+  console.log(issuedBook.state);
   
   issuedBook.fix();
-  console.log(issuedBook.state); // 30
+  console.log(issuedBook.state);
   
   library.addBook(issuedBook);
   console.log(
